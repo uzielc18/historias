@@ -1,0 +1,15 @@
+[Tue, 04 Apr 17 11:23:16 -0500][CRITICAL] exception 'KumbiaException' with message 'Table 'spatricia.proestadosprocesos' doesn't exist al ejecutar <em>"DESCRIBE `proestadosprocesos`"</em>' in E:\WWW\local\core\libs\db\adapters\mysqli.php:150
+Stack trace:
+#0 E:\WWW\local\core\libs\db\db_base.php(82): DbMySQLi->query('DESCRIBE `proes...')
+#1 E:\WWW\local\core\libs\db\db_base.php(101): DbBase->in_query('DESCRIBE `proes...')
+#2 E:\WWW\local\core\libs\db\adapters\mysqli.php(463): DbBase->fetch_all('DESCRIBE `proes...')
+#3 E:\WWW\local\core\libs\kumbia_active_record\kumbia_active_record.php(610): DbMySQLi->describe_table('proestadosproce...', NULL)
+#4 E:\WWW\local\core\libs\kumbia_active_record\kumbia_active_record.php(584): KumbiaActiveRecord->_dump_info('proestadosproce...', NULL)
+#5 E:\WWW\local\core\libs\kumbia_active_record\kumbia_active_record.php(550): KumbiaActiveRecord->dump()
+#6 E:\WWW\local\core\libs\kumbia_active_record\kumbia_active_record.php(275): KumbiaActiveRecord->_connect()
+#7 E:\WWW\local\default\app\controllers\admin\proestadosprocesos_controller.php(7): KumbiaActiveRecord->__construct()
+#8 [internal function]: ProestadosprocesosController->index()
+#9 E:\WWW\local\core\kumbia\dispatcher.php(81): ReflectionMethod->invokeArgs(Object(ProestadosprocesosController), Array)
+#10 E:\WWW\local\core\kumbia\bootstrap.php(138): Dispatcher::execute(Array)
+#11 E:\WWW\local\default\public\index.php(85): require('E:\WWW\local\co...')
+#12 {main}

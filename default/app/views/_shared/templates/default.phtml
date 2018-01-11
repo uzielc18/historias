@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+<?Php 
+$modulo = Router::get('module');
+$patrones = array();
+$patrones[0] = '/santa/';
+$sustituciones = array();
+$sustituciones[2] = 'santa ';
+$modulo_title = ucwords(preg_replace($patrones, $sustituciones, $modulo));
+?>  <title><?Php echo $modulo_title?></title>
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+       <?php
+        Tag::css('themes/base/jquery.ui.all');
+        Tag::css('backendnew/bootstrap');
+        Tag::css('backendnew/font-awesome');    
+        Tag::css('backendnew/AdminLTE');
+        Tag::css('dist/css/skins/_all-skins.min');
+        Tag::css('backendnew/iCheck/flat/blue');
+        Tag::css('backendnew/morris/morris');
+        Tag::css('backendnew/jvectormap/jquery-jvectormap-1.2.2');
+        Tag::css('backendnew/fullcalendar/fullcalendar');
+        Tag::css('backendnew/datepicker/datepicker3');
+        Tag::css('backendnew/daterangepicker/daterangepicker');
+        Tag::css('backendnew/bootstrap-wysihtml5/bootstrap3-wysihtml5.min');
+        Tag::css('backendnew/estilos');
+        echo Html::includeCss();
+        
+        echo '<link rel="stylesheet" type="text/css" href="/css/imprimir.css" media="print">';
+        
+        ?>
+    </head>
+<body class="hold-transition register-page">
+    <?php View::content();
+    //View::partial('jquerynew'); ?>
+</body>
+</html>

@@ -1,0 +1,4 @@
+vendor/*
+
+__bd_sp_sc/spatricia.sql
+default/app/config/databases.ini
