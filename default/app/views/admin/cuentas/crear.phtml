@@ -4,17 +4,17 @@
 </div>      
 <?php } 
 View::content() ?>
-<?php echo Form::open(NULL, 'post', 'class="form-horizontal"') ?>
+<?php echo Form::open(NULL, 'post', 'role="form"') ?>
 <?php echo Form::hidden('cuentas.id') ?>
-<div class="control-group">
-    <label class="control-label">Codigo de la Cuenta* : </label>
-    <div class="controls">
+<div class="form-group">
+    <label class="form-label">Codigo de la Cuenta* : </label>
+    <div class="forms">
         <?php echo Form::text('cuentas.codigo') ?>
     </div>
 </div>
-<div class="control-group">
-    <label class="control-label">Descripcion* : </label>
-    <div class="controls">
+<div class="form-group">
+    <label class="form-label">Descripcion* : </label>
+    <div class="forms">
         <?php echo Form::text('cuentas.descripcion') ?>
     </div>
 </div>
