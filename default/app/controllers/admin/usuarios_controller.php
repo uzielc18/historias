@@ -1,5 +1,5 @@
 <?php
-Load::models('aclusuarios','acldatos','plareas','tesdatos');
+Load::models('aclusuarios','acldatos','plareas');
 View::template('backend/backend');
 
 class UsuariosController extends AdminController {

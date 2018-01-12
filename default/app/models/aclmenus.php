@@ -12,15 +12,6 @@ class Aclmenus extends ActiveRecord {
      * Constante que define que el menu es visible desde el backend
      */
     const VISIBILIDAD_BACKEND = 2;
-	/**
-     * Constante que define que el menu es visible desde el santapatricia
-     */
-    const VISIBILIDAD_SPATRICIA = 0;
-	/**
-     * Constante que define que el menu es visible desde el satnacarmela
-     */
-    const VISIBILIDAD_SCARMELA = 4;
-
     /*
      * Constante que define que el menu es visible desde cualquier lado
      */

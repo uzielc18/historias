@@ -5,9 +5,9 @@
     <?Php 
 $modulo = Router::get('module');
 $patrones = array();
-$patrones[0] = '/santa/';
+$patrones[0] = '/s/';
 $sustituciones = array();
-$sustituciones[2] = 'santa ';
+$sustituciones[2] = ' ';
 $modulo_title = ucwords(preg_replace($patrones, $sustituciones, $modulo));
 if($modulo!='admin'){
 $t_t=explode(" ",$modulo_title);
@@ -46,7 +46,7 @@ $mini2=substr($t_t[1],0, 1);
 <body class="hold-transition login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="#"><b><?Php echo $modulo_title?></b></a>
+        <a href="javascript:;"><b><?Php echo $modulo_title?></b></a>
       </div>
       <!-- /.login-logo -->
       <div class="login-box-body">

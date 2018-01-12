@@ -51,8 +51,8 @@ if ($page->current <= $half) {
 }
 ?>
 
-<div class="pagination">
-    <ul>
+<div class="clearfix">
+    <ul class="pagination pagination-sm no-margin pull-right">
         <?php
         if ($page->prev) {
             echo '<li class="prev">', Html::link("$url/$page->prev", 'Anterior', 'title="Ir a la pág. anterior"'), '</li>'; // Se coloca el link sin numero de pagina para la pagina 1

@@ -14,11 +14,7 @@ class Menu {
      * Items del menu para el backend
      */
     const BACKEND = 2;
-	/**
-     * Constante que define que solo va a mostrar los
-     * Items del menu para el santa patricia
-     */
-    const APPS = 0;
+
     /**
      * Id del rol del usuario logueado actualmente
      *
@@ -46,7 +42,8 @@ class Menu {
     protected static function generarItems($objeto_menu, $entorno, $ubicacion,$id) {
         $sub_menu = $objeto_menu->get_sub_menus(self::$_id_rol, $entorno, $ubicacion);
         //$class = 'dropdown menu_' . str_replace('/', '_', $objeto_menu->url);
-        $menu_padre_activo='';
+       $menu_padre_activo=self::es_activa($objeto_menu->url);
+
         $class='';
 		if($ubicacion==1)$class='dropdown';
 		if($ubicacion==3)$class='treeview';
@@ -62,15 +59,15 @@ class Menu {
 				$span_clas='';
 			}
 			
-            $html = "<li id='{$objeto_menu->id}' class='{$class}{$menu_padre_activo}'>" .
-					'<a href="'.$objeto_menu->url.'"'.$a_class.'><i class="fa fa-'.$span_clas.'"></i><span>'.
-					$objeto_menu->nombre.'</span>'.$caret.'</a>'. PHP_EOL;
+            $html = "<li id='{$objeto_menu->id}' class='{$class}'>" .
+					'<a href="'.$objeto_menu->url.'"><i class="fa fa-'.$span_clas.'"></i><span>'.
+					$objeto_menu->nombre.$menu_padre_activo.'</span>'.$caret.'</a>'. PHP_EOL;
         } else {
 			if($ubicacion==1)
 			{
 				$span_clas='';
 			}
-            $html = "<li class='{$class}' data-parent_id='{$id}'>" .
+            $html = "<li class='{$class}{$menu_padre_activo}' data-parent_id='{$id}'>" .
                     Html::link($objeto_menu->url,'<i class="fa fa-'.$span_clas.'"></i><span>'.$objeto_menu->nombre.'</span>','class="dropdown-toggle"') . PHP_EOL;
         }
         if ($sub_menu)
@@ -88,8 +85,14 @@ class Menu {
     }
 
     protected static function es_activa($url) {
-        $url_actual = substr(Router::get('route'), 1);
-        return (strpos($url, $url_actual) !== false || strpos($url, "$url_actual/index") !== false);
+        $return='';
+        $url_actual = substr(Router::get('route'), 1);        
+        $pos=explode('/',$url_actual);
+        $url_actual_sin_parametros=$pos[0]."/".$pos[1];
+        if(strpos($url, $url_actual_sin_parametros) !== false || strpos($url, "url_actual_sin_parametros/index") !== false){
+            $return = ' active';
+        }
+        return $return;
     }		
 
 }
