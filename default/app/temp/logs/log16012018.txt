@@ -1,0 +1,20 @@
+[Tue, 16 Jan 18 10:39:26 -0500][CRITICAL] exception 'KumbiaException' with message 'You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 1' at line 1 al ejecutar <em>"SELECT id,nombre,appaterno,apmaterno,dni,telefono,celular,correo,direccion,fnacimiento,fecha_at,fecha_in,estado,userid,aclusuarios_id,aclempresas_id,filiaciones_id,aclcargos_id FROM acldatos WHERE aclusuarios_id= LIMIT 1"</em>' in C:\xampp\htdocs\core\libs\db\adapters\mysqli.php:150
+Stack trace:
+#0 C:\xampp\htdocs\core\libs\db\db_base.php(149): DbMySQLi->query('SELECT id,nombr...')
+#1 C:\xampp\htdocs\core\libs\kumbia_active_record\kumbia_active_record.php(783): DbBase->fetch_one('SELECT id,nombr...')
+#2 C:\xampp\htdocs\default\app\controllers\admin\usuarios_controller.php(92): KumbiaActiveRecord->find_first('conditions: acl...')
+#3 [internal function]: UsuariosController->editar('25')
+#4 C:\xampp\htdocs\core\kumbia\dispatcher.php(81): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 C:\xampp\htdocs\core\kumbia\bootstrap.php(138): Dispatcher::execute(Array)
+#6 C:\xampp\htdocs\default\public\index.php(85): require('C:\\xampp\\htdocs...')
+#7 {main}
+[Tue, 16 Jan 18 10:39:30 -0500][CRITICAL] exception 'KumbiaException' with message 'You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 1' at line 1 al ejecutar <em>"SELECT id,nombre,appaterno,apmaterno,dni,telefono,celular,correo,direccion,fnacimiento,fecha_at,fecha_in,estado,userid,aclusuarios_id,aclempresas_id,filiaciones_id,aclcargos_id FROM acldatos WHERE aclusuarios_id= LIMIT 1"</em>' in C:\xampp\htdocs\core\libs\db\adapters\mysqli.php:150
+Stack trace:
+#0 C:\xampp\htdocs\core\libs\db\db_base.php(149): DbMySQLi->query('SELECT id,nombr...')
+#1 C:\xampp\htdocs\core\libs\kumbia_active_record\kumbia_active_record.php(783): DbBase->fetch_one('SELECT id,nombr...')
+#2 C:\xampp\htdocs\default\app\controllers\admin\usuarios_controller.php(92): KumbiaActiveRecord->find_first('conditions: acl...')
+#3 [internal function]: UsuariosController->editar('25')
+#4 C:\xampp\htdocs\core\kumbia\dispatcher.php(81): ReflectionMethod->invokeArgs(Object(UsuariosController), Array)
+#5 C:\xampp\htdocs\core\kumbia\bootstrap.php(138): Dispatcher::execute(Array)
+#6 C:\xampp\htdocs\default\public\index.php(85): require('C:\\xampp\\htdocs...')
+#7 {main}

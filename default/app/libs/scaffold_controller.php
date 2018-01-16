@@ -2,11 +2,17 @@
 
 class ScaffoldController extends AdminController {
 
-    public $scaffold = 'bootstrap';
+    public $scaffold = 'kumbia';
 
     public function index($page=1) {
+        if($this->columns){
+            $this->results = Load::model($this->model)->paginate("columns: $this->columns","page: $page", 'order: id DESC');
+            $this->columns_view = explode(",", $this->columns);
+        }else{
+            $this->results = Load::model($this->model)->paginate("page: $page", 'order: id DESC');
+            $this->columns_view = current($this->results->items)->fields;
+        }
 		
-			$this->results = Load::model($this->model)->paginate("columns: $this->columns","page: $page", 'order: id DESC');
     }
 
     /**

@@ -31,23 +31,22 @@ class ModelForm {
 		$model_name = Util::smallcase(get_class($model));
 		if(! $action) $action = ltrim(Router::get('route'),'/');
 		
-		echo '<form action="',PUBLIC_PATH.$action,'" method="post" id="',$model_name,'" class="scaffold">'.PHP_EOL; 
+		echo '<form action="',PUBLIC_PATH.$action,'" method="post" id="',$model_name,'" class="form-horizontal">'.PHP_EOL; 
 		$pk = $model->primary_key[0];
 		echo '<input id="',$model_name,'_',$pk,'" name="',$model_name,'[',$pk,']" class="id" value="',$model->$pk.'" type="hidden">'.PHP_EOL; 
 		
 		$fields = array_diff($model->fields, $model->_at, $model->_in, $model->primary_key);
-		echo $model_name;
 		foreach ($fields as $field){
 			
 			$tipo = trim(preg_replace('/(\(.*\))/','',$model->_data_type[$field]));//TODO: recoger tamaño y otros valores
 			$alias = $model->get_alias($field);
 			$formId = $model_name.'_'.$field;
 			$formName = $model_name.'['.$field.']';
-			echo '<div class="control-group">';
+			echo '<div class="form-group">';
 			if (in_array($field, $model->not_null)){
-				echo "<label for=\"$formId\" class=\"required control-label\">$alias *</label>".PHP_EOL; 
-			} else echo "<label for=\"$formId\" class=\"control-label\">$alias</label>".PHP_EOL; 
-			echo '<div class="controls">';			
+				echo "<label for=\"$formId\" class=\"required col-sm-2 form-label\">$alias *:</label>".PHP_EOL; 
+			} else echo "<label for=\"$formId\" class=\" col-sm-2 form-label\">$alias:</label>".PHP_EOL; 
+			echo '<div class="col-sm-8">';			
 			switch ($tipo)
 			{
 						case 'tinyint': case 'smallint': case 'mediumint':
@@ -65,18 +64,18 @@ class ModelForm {
 									default : $n=NULL;$array=NULL;break;
 									
 								}
-								echo Form::dbSelect($model_name.'.'.$field,$n,$array,'Seleccione',NULL,$model->$field);
+								echo Form::dbSelect($model_name.'.'.$field,$n,$array,'Seleccione','class="form-control"',$model->$field);
 								break;
 							} else {
-								echo "<input id=\"$formId\" type=\"number\" name=\"$formName\" value=\"{$model->$field}\">".PHP_EOL ; 
+								echo "<input id=\"$formId\" type=\"number\" name=\"$formName\" value=\"{$model->$field}\" class=\"form-control\">".PHP_EOL ; 
 								break;
 							}
 						
 						case 'date': // Usar el js de datetime
-							echo "<input id=\"$formId\" type=\"date\" name=\"$formName\" value=\"{$model->$field}\">".PHP_EOL;
+							echo "<input id=\"$formId\" type=\"date\" name=\"$formName\" value=\"{$model->$field}\" class=\"form-control\">".PHP_EOL;
 							break;
 						case 'datetime': case 'timestamp':
-							echo "<input id=\"$formId\" type=\"datetime\" name=\"$formName\" value=\"{$model->$field}\">".PHP_EOL;
+							echo "<input id=\"$formId\" type=\"datetime\" name=\"$formName\" value=\"{$model->$field}\" class=\"form-control\">".PHP_EOL;
 
 							//echo '<script type="text/javascript" src="/javascript/kumbia/jscalendar/calendar.js"></script>
 							//<script type="text/javascript" src="/javascript/kumbia/jscalendar/calendar-setup.js"></script>
@@ -91,11 +90,11 @@ class ModelForm {
 						
 						case 'text': case 'mediumtext': case 'longtext':
 						case 'blob': case 'mediumblob': case 'longblob': // Usar textarea
-							echo "<textarea id=\"$formId\" name=\"$formName\">{$model->$field}</textarea>".PHP_EOL;
+							echo "<textarea id=\"$formId\" name=\"$formName\" class=\"form-control\">{$model->$field}</textarea>".PHP_EOL;
 							break;
 						
 						default: //text,tinytext,varchar, char,etc se comprobara su tamaño
-							echo "<input id=\"$formId\" type=\"text\" name=\"$formName\" value=\"{$model->$field}\">".PHP_EOL;
+							echo "<input id=\"$formId\" type=\"text\" name=\"$formName\" value=\"{$model->$field}\" class=\"form-control\">".PHP_EOL;
 							//break;					
 			
 			}

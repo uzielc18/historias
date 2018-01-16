@@ -1,5 +1,5 @@
 <?php
-Load::models('aclusuarios','acldatos','plareas');
+Load::models('aclusuarios','acldatos');
 View::template('backend/backend');
 
 class UsuariosController extends AdminController {
@@ -21,8 +21,6 @@ class UsuariosController extends AdminController {
     }
 
     public function perfil() {
-		if(Session::get('EMPRESAS_ID')=='1')View::template('spatricia/default');
-		if(Session::get('EMPRESAS_ID')=='2')View::template('scarmela/default');
         try {
             $usr = new Aclusuarios();
 			$dat= new Acldatos();
