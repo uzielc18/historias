@@ -1,5 +1,5 @@
 <?php
-class Placargos extends ActiveRecord {
+class Aclcargos extends ActiveRecord {
 
 
     public function initialize() {
