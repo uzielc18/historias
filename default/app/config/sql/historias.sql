@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-01-2018 a las 05:21:02
+-- Tiempo de generación: 19-01-2018 a las 18:51:36
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -108,8 +108,8 @@ CREATE TABLE `acldatos` (
 --
 
 INSERT INTO `acldatos` (`id`, `nombre`, `appaterno`, `apmaterno`, `dni`, `telefono`, `celular`, `correo`, `direccion`, `fnacimiento`, `fecha_at`, `fecha_in`, `estado`, `userid`, `aclusuarios_id`, `aclempresas_id`, `filiaciones_id`, `aclcargos_id`) VALUES
-(2, 'ADIEL', 'CARPIO', 'VILLANUEVA', '44220498', '5831843', '949227178', '1302@hotmail.com', 'Cal. Las Retamas Mz. B Lt. 2 Los Pinos-La Molina', '1987-02-13', NULL, '2014-02-05 10:52:48', '1', 1, 2, 0, 0, 0),
-(3, 'UZIEL', 'CARPIO', 'VILLANUEVA', '43408841', '3592197', '990005806', 'uzielc18@hotmail.com', 'Urb. San Francisco Mz C Lt 12', '1985-12-15', NULL, '2014-12-03 13:15:54', '1', 1, 3, 0, 0, 0);
+(2, 'ADIEL', 'CARPIO', 'VILLANUEVA', '44220498', '5831843', '949227178', '1302@hotmail.com', 'Cal. Las Retamas Mz. B Lt. 2 Los Pinos-La Molina', '1987-02-13', NULL, '2014-02-05 10:52:48', '1', 1, 2, 1, 0, 0),
+(3, 'UZIEL', 'CARPIO', 'VILLANUEVA', '43408841', '3592197', '990005806', 'uzielc18@hotmail.com', 'Urb. San Francisco Mz C Lt 12', '1985-12-15', NULL, '2014-12-03 13:15:54', '1', 1, 3, 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -187,7 +187,8 @@ INSERT INTO `aclmenus` (`id`, `aclmenus_id`, `aclrecursos_id`, `nombre`, `url`, 
 (92, 32, 88, 'Almacenes', 'admin/almacenes', 10, NULL, NULL, 2, 1, 1, '2012-12-10 17:09:50', NULL, 3),
 (180, 32, 60, 'Configuraciones', 'admin/configuraciones', 50, NULL, NULL, 2, 1, 1, '2015-04-07 10:32:57', NULL, 3),
 (182, NULL, 61, 'Aplicacion', 'apps/index', 1, NULL, NULL, 2, 1, 1, '2018-01-11 22:34:58', '2018-01-11 22:52:06', 3),
-(183, NULL, 62, 'Enfermedades', 'admin/admin_enfermedades', 3, NULL, 'btc', 2, 1, 3, '2018-01-15 23:17:26', '2018-01-15 23:18:06', 3);
+(183, NULL, 62, 'Enfermedades', 'admin/admin_enfermedades', 3, NULL, 'btc', 2, 1, 3, '2018-01-15 23:17:26', '2018-01-15 23:18:06', 3),
+(184, NULL, 63, 'Admin Datos usuarios', 'admin/admin_acldatos', 4, NULL, 'smile-o', 2, 1, 3, '2018-01-16 10:34:50', NULL, 3);
 
 -- --------------------------------------------------------
 
@@ -222,44 +223,48 @@ INSERT INTO `aclpermisos` (`id`, `aclroles_id`, `aclrecursos_id`) VALUES
 (10351, 4, 88),
 (10362, 2, 33),
 (10363, 4, 33),
-(10458, 2, 20),
-(10459, 4, 20),
-(10460, 2, 62),
-(10461, 4, 62),
-(10462, 2, 18),
-(10463, 4, 18),
-(10464, 2, 60),
-(10465, 4, 60),
-(10466, 2, 45),
-(10467, 4, 45),
-(10468, 2, 15),
-(10469, 4, 15),
-(10470, 2, 4),
-(10471, 4, 4),
-(10472, 2, 21),
-(10473, 4, 21),
-(10474, 2, 5),
-(10475, 4, 5),
-(10476, 2, 3),
-(10477, 4, 3),
-(10478, 2, 2),
-(10479, 4, 2),
-(10480, 2, 46),
-(10481, 4, 46),
-(10482, 2, 1),
-(10483, 4, 1),
-(10484, 2, 17),
-(10485, 4, 17),
-(10486, 2, 14),
-(10487, 4, 14),
-(10488, 2, 61),
-(10489, 4, 61),
-(10490, 2, 11),
-(10491, 4, 11),
-(10492, 2, 19),
-(10493, 4, 19),
-(10494, 2, 25),
-(10495, 4, 25);
+(10536, 2, 20),
+(10537, 4, 20),
+(10538, 2, 64),
+(10539, 4, 64),
+(10540, 2, 63),
+(10541, 4, 63),
+(10542, 2, 62),
+(10543, 4, 62),
+(10544, 2, 18),
+(10545, 4, 18),
+(10546, 2, 60),
+(10547, 4, 60),
+(10548, 2, 45),
+(10549, 4, 45),
+(10550, 2, 15),
+(10551, 4, 15),
+(10552, 2, 4),
+(10553, 4, 4),
+(10554, 2, 21),
+(10555, 4, 21),
+(10556, 2, 5),
+(10557, 4, 5),
+(10558, 2, 3),
+(10559, 4, 3),
+(10560, 2, 2),
+(10561, 4, 2),
+(10562, 2, 46),
+(10563, 4, 46),
+(10564, 2, 1),
+(10565, 4, 1),
+(10566, 2, 17),
+(10567, 4, 17),
+(10568, 2, 14),
+(10569, 4, 14),
+(10570, 2, 61),
+(10571, 4, 61),
+(10572, 2, 11),
+(10573, 4, 11),
+(10574, 2, 19),
+(10575, 4, 19),
+(10576, 2, 25),
+(10577, 4, 25);
 
 -- --------------------------------------------------------
 
@@ -304,7 +309,9 @@ INSERT INTO `aclrecursos` (`id`, `modulo`, `controlador`, `accion`, `recurso`, `
 (46, 'admin', 'subcuentas', NULL, 'admin/subcuentas/*', 'Crea las sub cuentas', 1, '2012-05-10 09:10:25', NULL, NULL, NULL),
 (60, 'admin', 'configuraciones', NULL, 'admin/configuraciones/*', 'ConfiguraciÃ³n de las variables', 1, '2012-07-30 12:38:55', NULL, NULL, NULL),
 (61, 'apps', 'index', NULL, 'apps/index/*', 'index de bienvenida', 1, '2018-01-11 22:30:45', NULL, NULL, NULL),
-(62, 'admin', 'admin_enfermedades', NULL, 'admin/admin_enfermedades/*', 'Admin Enfermedades', 1, '2018-01-15 23:14:56', NULL, NULL, NULL);
+(62, 'admin', 'admin_enfermedades', NULL, 'admin/admin_enfermedades/*', 'Admin Enfermedades', 1, '2018-01-15 23:14:56', NULL, NULL, NULL),
+(63, 'admin', 'admin_acldatos', NULL, 'admin/admin_acldatos/*', 'Control Rapido de DAtos ', 1, '2018-01-16 10:33:39', NULL, NULL, NULL),
+(64, 'admin', 'admin_aclcargos', NULL, 'admin/admin_aclcargos/*', 'admin de cargos', 1, '2018-01-16 14:17:27', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -330,17 +337,7 @@ CREATE TABLE `aclroles` (
 INSERT INTO `aclroles` (`id`, `rol`, `padres`, `plantilla`, `activo`, `fecha_at`, `fecha_in`, `userid`) VALUES
 (1, 'usuario comun', NULL, NULL, 0, NULL, '2013-01-24 12:58:42', NULL),
 (2, 'usuario administrador', NULL, NULL, 1, NULL, '2014-03-24 11:44:01', NULL),
-(4, 'administrador del sistema', NULL, NULL, 1, NULL, '2012-06-20 09:22:31', NULL),
-(5, 'Ventas', NULL, NULL, 1, '2012-04-19 11:43:03', '2012-04-24 12:39:42', NULL),
-(6, 'Personal SP', NULL, NULL, 1, '2012-04-24 12:39:31', '2012-04-25 11:54:53', NULL),
-(8, 'Asistente', NULL, NULL, 1, '2013-01-24 11:45:49', '2013-01-24 11:45:51', NULL),
-(9, 'DiseÃ±o', NULL, NULL, 1, '2013-05-16 08:47:52', '2013-05-16 08:47:56', NULL),
-(10, 'Control hilo', NULL, NULL, 1, '2013-08-06 12:31:45', '2013-08-06 12:31:50', NULL),
-(11, 'Control Urdido', '15', NULL, 1, '2013-10-03 12:24:25', '2014-03-04 10:04:07', NULL),
-(12, 'Control Tejedor', NULL, NULL, 1, '2013-10-03 12:37:39', '2013-10-03 12:37:42', NULL),
-(13, 'Control de Calidad', NULL, NULL, 1, '2013-10-03 12:47:27', '2013-10-03 12:47:37', NULL),
-(14, 'Ingreso Chenille', NULL, NULL, 1, '2013-10-04 11:24:29', '2013-10-04 11:24:33', NULL),
-(15, 'administrador SC', NULL, NULL, 1, '2014-03-04 10:00:23', '2014-03-04 10:00:27', NULL);
+(4, 'administrador del sistema', NULL, NULL, 1, NULL, '2012-06-20 09:22:31', NULL);
 
 -- --------------------------------------------------------
 
@@ -381,27 +378,9 @@ CREATE TABLE `aclusuarios` (
 --
 
 INSERT INTO `aclusuarios` (`id`, `aclempresas_id`, `aclroles_id`, `usuario`, `nombres`, `clave`, `keyseguridad`, `picture`, `activo`, `fecha_at`, `fecha_in`, `estado`, `userid`) VALUES
-(1, 0, 2, 'Administrador', 'administrador', '91f5167c34c400758115c2a6826ec2e3', NULL, 'avatar5.png', 1, '2012-04-19 11:38:30', '2012-07-03 09:28:44', '1', 2),
-(2, 0, 4, 'mari', 'Maritza', '202cb962ac59075b964b07152d234b70', NULL, 'avatar2.png', 1, NULL, '2014-02-05 10:52:48', '1', 3),
-(3, 0, 4, 'uziel', 'Uziel', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'avatar5.png', 1, NULL, '2015-07-22 10:05:39', '1', 2),
-(4, 1, 4, 'rcastro', 'Roxana Castro', '202cb962ac59075b964b07152d234b70', NULL, 'avatar2.png', 1, '2012-05-08 13:27:32', '2017-03-21 13:59:06', '1', 2),
-(5, 1, 2, 'rgarreta', 'Roxana', 'e97f8b4cf849e6b79d3c2f1c5cf2bd39', NULL, 'avatar2.png', 1, '2012-05-08 13:30:10', '2015-07-20 16:08:20', '1', 2),
-(6, 1, 4, 'rgaldos', 'Ricardo', 'e0e26a9982c83674e63cb8086e23e792', NULL, 'avatar5.png', 1, '2012-05-08 13:31:52', '2013-12-04 18:34:58', '1', 3),
-(12, 1, 2, 'perasmo', 'Erasmo', 'ef03a6c053187abf2dac8743588a686c', NULL, 'avatar5.png', 1, '2012-05-30 10:52:13', '2013-11-28 11:54:07', '1', 2),
-(13, 1, 10, 'bmiguel', 'Benito', '28f1f28ec7c575d11e4142fdc945a567', NULL, 'avatar5.png', 1, '2012-05-30 10:53:17', '2013-08-06 12:34:07', '1', 3),
-(14, 1, 4, 'rrhh', 'Alfonso', '89f71c4e9055ee73c3bc372528a54b9c', NULL, 'avatar5.png', 1, '2013-01-14 11:29:14', '2013-05-07 10:23:17', '1', 2),
-(15, 1, 4, 'disenho', 'Yamina', '202cb962ac59075b964b07152d234b70', NULL, 'avatar2.png', 1, '2013-04-23 09:00:56', '2015-10-16 11:35:42', '1', 2),
-(16, 1, 4, 'disenho2', 'Ethy', '68bf55bb6153e24cd8c6c5f19104bc4e', NULL, 'avatar2.png', 1, '2013-05-07 09:18:20', '2013-05-20 08:42:50', '1', 3),
-(17, 1, 4, 'disenho3', 'Zarela', '202cb962ac59075b964b07152d234b70', NULL, 'avatar2.png', 1, '2013-05-07 09:36:00', '2015-10-15 17:03:11', '1', 2),
-(18, 1, 11, 'cjavier', 'Javier Lincol', '72cb1f79e7e61dc6c3514f7e23198686', NULL, 'avatar5.png', 1, '2013-10-03 12:19:49', '2014-03-04 10:03:20', '1', 3),
-(19, 1, 12, 'qsabino', 'Sabino Quiroz', '4505f6c5c7e7968f1b3cce80d101f18b', NULL, 'avatar5.png', 1, '2013-10-03 12:37:14', '2013-10-03 12:40:49', '1', 2),
-(20, 1, 12, 'auriel', 'Uriel Acaro', '7e13cf4b7ec22dca36a7d1902c3c0eec', NULL, 'avatar5.png', 1, '2013-10-03 12:39:55', '2013-10-03 12:40:53', '1', 2),
-(21, 1, 12, 'jmanuel', 'Jose Manuel', '3c65db216bf8a979ab0e50c9970f0f90', NULL, 'avatar5.png', 1, '2013-10-03 12:40:44', '2013-10-03 12:40:57', '1', 2),
-(22, 1, 13, 'pvictor', 'Victor Poma', '2b856c4484dcedab988503b6a91f7f65', NULL, 'avatar5.png', 1, '2013-10-03 12:48:14', '2013-10-03 12:50:07', '1', 2),
-(24, 1, 14, 'jantonio', 'Jose Antonio', '523892c29794463e26ead1b2ad79f0a0', NULL, 'avatar5.png', 1, '2013-10-04 11:56:18', '2013-10-04 11:56:23', '1', 2),
-(25, 1, 1, 'demo1', 'demo', 'e368b9938746fa090d6afd3628355133', NULL, NULL, 0, '2014-12-02 09:04:03', NULL, '1', 3),
-(26, 2, 10, 'demo_local', 'demo_local', '202cb962ac59075b964b07152d234b70', NULL, NULL, 1, '2014-12-02 09:07:02', '2015-04-21 12:31:13', '1', 3),
-(27, 1, 4, 'ventas', 'Monica', '45b0af22e7f541882f31aba445e13617', NULL, NULL, 1, '2016-07-04 09:01:38', '2016-07-04 09:01:47', '1', 2);
+(1, 1, 2, 'Administrador', 'Administrador', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'avatar5.png', 1, '2012-04-19 11:38:30', '2018-01-16 10:55:38', '1', 3),
+(2, 1, 2, 'adiel', 'Adiel', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'avatar2.png', 1, '2012-05-08 13:30:10', '2018-01-16 10:37:37', '1', 1),
+(3, 1, 2, 'uziel', 'Uziel', 'e10adc3949ba59abbe56e057f20f883e', NULL, 'avatar2.png', 1, '2014-12-02 09:04:03', '2018-01-16 10:37:01', '1', 1);
 
 -- --------------------------------------------------------
 
@@ -2837,17 +2816,17 @@ ALTER TABLE `aclempresas`
 -- AUTO_INCREMENT de la tabla `aclmenus`
 --
 ALTER TABLE `aclmenus`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=184;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=185;
 --
 -- AUTO_INCREMENT de la tabla `aclpermisos`
 --
 ALTER TABLE `aclpermisos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10496;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10578;
 --
 -- AUTO_INCREMENT de la tabla `aclrecursos`
 --
 ALTER TABLE `aclrecursos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 --
 -- AUTO_INCREMENT de la tabla `aclroles`
 --
@@ -2959,13 +2938,6 @@ ALTER TABLE `aclcargos`
   ADD CONSTRAINT `fk_aclcargos_aclempresas1` FOREIGN KEY (`aclempresas_id`) REFERENCES `aclempresas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Filtros para la tabla `acldatos`
---
-ALTER TABLE `acldatos`
-  ADD CONSTRAINT `fk_acldatos_aclcargos1` FOREIGN KEY (`aclcargos_id`) REFERENCES `aclcargos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_acldatos_filiaciones` FOREIGN KEY (`filiaciones_id`) REFERENCES `filiaciones` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
 -- Filtros para la tabla `enfermedades`
 --
 ALTER TABLE `enfermedades`
@@ -2973,49 +2945,6 @@ ALTER TABLE `enfermedades`
   ADD CONSTRAINT `fk_enfermedades_fisiologicos1` FOREIGN KEY (`fisiologicos_id`) REFERENCES `fisiologicos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_enfermedades_patologicos1` FOREIGN KEY (`patologicos_id`) REFERENCES `patologicos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_enfermedades_tipoenfermedad1` FOREIGN KEY (`tipoenfermedad_id`) REFERENCES `tipoenfermedad` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `equipos`
---
-ALTER TABLE `equipos`
-  ADD CONSTRAINT `fk_equipos_aclcargos1` FOREIGN KEY (`aclcargos_id`) REFERENCES `aclcargos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_equipos_acldatos1` FOREIGN KEY (`acldatos_id`) REFERENCES `acldatos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_equipos_reporteoperatorio1` FOREIGN KEY (`reporteoperatorio_id`) REFERENCES `reporteoperatorio` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `examenclinico`
---
-ALTER TABLE `examenclinico`
-  ADD CONSTRAINT `fk_examenclinico_enfermedades1` FOREIGN KEY (`enfermedades_id`) REFERENCES `enfermedades` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_examenclinico_exmanes1` FOREIGN KEY (`exmanes_id`) REFERENCES `examenes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `examenes`
---
-ALTER TABLE `examenes`
-  ADD CONSTRAINT `fk_exmanes_medidas1` FOREIGN KEY (`medidas_id`) REFERENCES `medidas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_exmanes_tipoexamenes1` FOREIGN KEY (`tipoexamenes_id`) REFERENCES `tipoexamenes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `filiaciones`
---
-ALTER TABLE `filiaciones`
-  ADD CONSTRAINT `fk_filiaciones_estadocivil1` FOREIGN KEY (`estadocivil_id`) REFERENCES `estadocivil` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_filiaciones_gradoinstruccion1` FOREIGN KEY (`gradoinstruccion_id`) REFERENCES `gradoinstruccion` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_filiaciones_sexos1` FOREIGN KEY (`sexos_id`) REFERENCES `generos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_filiaciones_situacionservicios1` FOREIGN KEY (`situacionservicios_id`) REFERENCES `situacionservicios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `reporteoperatorio`
---
-ALTER TABLE `reporteoperatorio`
-  ADD CONSTRAINT `fk_reporteoperatorio_filiaciones1` FOREIGN KEY (`filiaciones_id`) REFERENCES `filiaciones` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `tipoexamenes`
---
-ALTER TABLE `tipoexamenes`
-  ADD CONSTRAINT `fk_tipoexamenes_tipoexamenes1` FOREIGN KEY (`tipoexamenes_id`) REFERENCES `tipoexamenes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
