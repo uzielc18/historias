@@ -7,8 +7,8 @@ class Examenclinico extends ActiveRecord
 	
 	public function initialize()
 	{
-		/*$this->has_many('acldatos');
-		$this->belongs_to('aclempresas');*/
+		/*$this->has_many('acldatos');*/
+		$this->belongs_to('enfermades','examenes');
 	}
 }
 ?>

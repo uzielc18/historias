@@ -4,6 +4,7 @@ class Acldatos extends ActiveRecord {
     public function initialize() {
         //relaciones;
         $this->belongs_to('aclusuarios','aclempresas');
+        $this->has_one('filiaciones');
 		$this->validates_presence_of('nombre', 'message: Debe escribir un <b>Nombre</b> para el Trabajador');
         $this->validates_presence_of('apaterno', 'message: Debe escribir el <b>Primir Apellido</b>');
         $this->validates_presence_of('amaterno', 'message: Debe escribir el <b>Segundo Apellido</b>');
